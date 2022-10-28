@@ -1,0 +1,27 @@
+{
+  "name": "api-nodejs-planetscale",
+  "version": "1.0.0",
+  "description": "An API with nodejs deployed in PlanetScale",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon ./src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lestercoyoyjr/API-NODEJS-PLANETSCALE.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lestercoyoyjr/API-NODEJS-PLANETSCALE/issues"
+  },
+  "homepage": "https://github.com/lestercoyoyjr/API-NODEJS-PLANETSCALE#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

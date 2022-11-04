@@ -5,7 +5,7 @@ const indexRouter = Router();
 const prefix = "/api";
 
 // root endpoint     
-indexRouter.get("/", (req,res) => {
+indexRouter.get(prefix, (req,res) => {
     res.send("Welcome to Planetscale API");
 })
 

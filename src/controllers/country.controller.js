@@ -15,7 +15,18 @@ export const getCountries = (req,res) => {
 };
 
 export const getCountry = (req,res) => {
-    res.send("countries");
+    const {id} = req.params;
+    countryServices
+    .getCountry(id)
+    .then((result) => {
+        res.status(200).json({
+            message: "Country retrieved successfully",
+            data: result[0],
+        })
+    })
+    .catch((err) => {
+        res.status(500).send(err);
+    })
 };
 
 export const createCountry = (req,res) => {

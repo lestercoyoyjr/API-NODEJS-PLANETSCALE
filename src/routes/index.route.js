@@ -1,6 +1,8 @@
 import { Router } from "express";
+import countryRouter from "./country.route.js";
 
 const indexRouter = Router();
+const prefix = "/api";
 
 // root endpoint     
 indexRouter.get("/", (req,res) => {
@@ -8,8 +10,6 @@ indexRouter.get("/", (req,res) => {
 })
 
 // get Countries
-indexRouter.get("/country", (req,res) =>{
-    res.send("countries");
-})
+indexRouter.use(`${prefix}/country`, countryRouter);
 
 export default indexRouter;

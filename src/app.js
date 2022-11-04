@@ -1,7 +1,7 @@
 import express from "express";
 
 import db from "./config/db.js";
-import indexRouter from "./routes/index.js";
+import indexRouter from "./routes/index.route.js";
 
 const app = express();
 

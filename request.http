@@ -21,3 +21,6 @@ Content-Type: application/json
     "capital": "Mexico City DF",
     "currency": "MXN"
 }
+
+###
+DELETE http://localhost:3000/api/country/3 HTTP/1.1

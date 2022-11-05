@@ -7,6 +7,9 @@ const app = express();
 
 app.set("port", process.env.PORT || 3000)
 
+// middleware
+app.use(express.json());
+
 // routes
 app.use("/", indexRouter);
 app.use("*", (req,res) => {

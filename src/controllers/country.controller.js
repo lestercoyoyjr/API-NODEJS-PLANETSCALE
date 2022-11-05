@@ -30,11 +30,34 @@ export const getCountry = (req,res) => {
 };
 
 export const createCountry = (req,res) => {
-    res.send("countries");
+    const country = req.body;
+    countryServices
+    .createCountry(country)
+    .then(() => {
+        res.status(200).json({
+            message: "Country created successfully",
+            data: country,
+        })
+    })
+    .catch((err) => {
+        res.status(500).send(err);
+    })
 };
 
 export const updateCountry = (req,res) => {
-    res.send("countries");
+    const {id} = req.params;
+    const country = req.body;
+    countryServices
+    .updateCountry(id, country)
+    .then(() => {
+        res.status(200).json({
+            message: "Country updated successfully",
+            data: country,
+        })
+    })
+    .catch((err) => {
+        res.status(500).send(err);
+    })
 };
 
 export const deleteCountry = (req,res) => {

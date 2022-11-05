@@ -19,3 +19,27 @@ export const getCountry = (id) => {
         .catch((err) => reject(err));
     });
 };
+
+export const createCountry = (country) => {
+    return new Promise((resolve,reject) => {
+        const query = 'INSERT INTO country (name, capital, currency) VALUES (?,?,?)';
+
+        const {name, capital, currency} = country;
+
+        db.execute(query, [name, capital, currency])
+        .then((result) => resolve(result))
+        .catch((err) => reject(err));
+    });
+};
+
+export const updateCountry = (id, country) => {
+    return new Promise((resolve,reject) => {
+        const query = 'UPDATE country SET name = ?, capital = ?, currency = ? WHERE id = ?';
+
+        const {name, capital, currency} = country;
+
+        db.execute(query, [name, capital, currency, id])
+        .then((result) => resolve(result))
+        .catch((err) => reject(err));
+    });
+};

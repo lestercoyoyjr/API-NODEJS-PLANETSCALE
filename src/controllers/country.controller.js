@@ -61,5 +61,16 @@ export const updateCountry = (req,res) => {
 };
 
 export const deleteCountry = (req,res) => {
-    res.send("countries");
+    const {id} = req.params;
+    countryServices
+    .deleteCountry(id)
+    .then((result) => {
+        res.status(200).json({
+            message: "Country deleted successfully",
+            data: result[0],
+        })
+    })
+    .catch((err) => {
+        res.status(500).send(err);
+    })
 };

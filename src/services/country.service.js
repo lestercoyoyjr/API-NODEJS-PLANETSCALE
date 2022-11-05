@@ -43,3 +43,13 @@ export const updateCountry = (id, country) => {
         .catch((err) => reject(err));
     });
 };
+
+export const deleteCountry = (id) => {
+    return new Promise((resolve,reject) => {
+        const query = 'DELETE FROM country WHERE id = ?';
+
+        db.execute(query, [id])
+        .then((result) => resolve(result))
+        .catch((err) => reject(err));
+    });
+};
